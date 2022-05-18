@@ -4,12 +4,7 @@ use rand::Rng;
 fn main() {
     let mut ip_array: [u32; 4] = [0; 4];
     
-    let mut secret_array: [u32; 4] = [0; 4];
-    
-    secret_array[0] = rand::thread_rng().gen_range(0..256);
-    secret_array[1] = rand::thread_rng().gen_range(0..256);
-    secret_array[2] = rand::thread_rng().gen_range(0..256);
-    secret_array[3] = rand::thread_rng().gen_range(0..256);
+    let secret_array: [u32; 4] = [rand::thread_rng().gen_range(0..256), rand::thread_rng().gen_range(0..256), rand::thread_rng().gen_range(0..256), rand::thread_rng().gen_range(0..256)];
     
     let secret_ip = format!("{}.{}.{}.{}", secret_array[0], secret_array[1], secret_array[2], secret_array[3]);
     let mut ip = format!("{}.{}.{}.{}", ip_array[0], ip_array[1], ip_array[2], ip_array[3]);
